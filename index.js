@@ -13,12 +13,13 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 app.use("/api", router)
-app.use(express.static("../client/build"))
+/*проверить адреса папок!!!*/
+app.use(express.static("../pn22_client/build"))
+/*статический путь!!!*/
 app.get("*", (req, res) => {
-   res.sendFile(path.join("../client/build", "index.html"))
-})
+      res.sendFile(path.join("D:/MAIN PROJECT/pn22_client/build/index.html"))
+   })
 app.use(errorHandler)
-
 
 const start = async () => {
    try {
